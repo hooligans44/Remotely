@@ -110,7 +110,7 @@ public class AgentHubConnection : IAgentHubConnection, IDisposable
         {
             try
             {
-                var waitSeconds = Math.Min(60, Math.Pow(i, 2));
+                var waitSeconds = Math.Min(18000, Math.Pow(i, 2));
                 // This will allow the first attempt to go through immediately, but
                 // subsequent attempts will have an exponential delay.
                 _ = await throttle.WaitAsync(TimeSpan.FromSeconds(waitSeconds));
